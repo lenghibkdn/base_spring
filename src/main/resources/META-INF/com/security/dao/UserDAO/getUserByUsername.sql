@@ -1,0 +1,1 @@
+Select * from user where username = /*username*/'test'
