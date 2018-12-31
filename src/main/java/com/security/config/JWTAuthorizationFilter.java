@@ -15,6 +15,7 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 import io.jsonwebtoken.Jwts;
 
+//check authentication of jwt 
 public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 	
    // private AuthenticationManager authenticationManager;

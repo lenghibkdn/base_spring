@@ -22,6 +22,8 @@ import com.security.entity.ApplicationUser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+
+// Check for login and create jwt
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
 	// private static final Logger LOGGER =
