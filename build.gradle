@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '2.1.1.RELEASE'
+		springCloudVersion = '1.2.1.RELEASE'// 必要
   		tomcatVersion = "8.0.15"
 	}
 	repositories {
@@ -9,6 +10,7 @@ buildscript {
 	
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE"
 	}
 	
 }
@@ -17,6 +19,12 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+     imports {
+          mavenBom 'org.springframework.cloud:spring-cloud-aws:1.2.2.BUILD-SNAPSHOT'// 必要
+     }
+}
 
 group = 'com.security'
 version = '0.0.1-SNAPSHOT'
@@ -29,6 +37,7 @@ compileJava.dependsOn processResources
 
 repositories {
 	mavenCentral()
+	maven { url 'https://repo.spring.io/libs-snapshot' }
 }
 
 
@@ -44,4 +53,5 @@ dependencies {
 	compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
 	compile('org.seasar.doma.boot:doma-spring-boot-starter:1.0.2')
 	compile('io.jsonwebtoken:jjwt:0.9.0')
+	compile("org.springframework.cloud:spring-cloud-aws-context:${springCloudVersion}")
 }
