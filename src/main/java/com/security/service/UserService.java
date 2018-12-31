@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.security.dao.UserDAO;
-import com.security.entity.User;
+import com.security.entity.UserEntity;
 
 @Service
 public class UserService {
@@ -15,7 +15,7 @@ public class UserService {
 	@Autowired
 	private UserDAO userDAO;
 	
-	public List<User> getAllUser() {
+	public List<UserEntity> getAllUser() {
 		// TODO Auto-generated method stub
 		return userDAO.getAllUser();
 		//return null;

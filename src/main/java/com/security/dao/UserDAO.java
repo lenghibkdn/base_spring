@@ -6,7 +6,7 @@ import org.seasar.doma.Dao;
 import org.seasar.doma.Select;
 import org.seasar.doma.boot.ConfigAutowireable;
 
-import com.security.entity.User;
+import com.security.entity.UserEntity;
 
 
 @Dao
@@ -14,5 +14,8 @@ import com.security.entity.User;
 public interface UserDAO {
 
 	@Select
-	List<User> getAllUser();
+	List<UserEntity> getAllUser();
+
+	@Select
+	UserEntity getUserByUsername(String username);
 }

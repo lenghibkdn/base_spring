@@ -12,7 +12,7 @@ import lombok.Setter;
 @Entity
 @Getter @Setter @NoArgsConstructor
 @Table(name = "user")
-public class User implements Serializable{
+public class UserEntity implements Serializable{
 	/**
 	 * 
 	 */
