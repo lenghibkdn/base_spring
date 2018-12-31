@@ -37,6 +37,7 @@ public class AmazonClient {
     @Value("${amazonProperties.secretKey}")
     private String secretKey;
     
+    // init connect
     @PostConstruct
     private void initializeAmazon() {
 //       AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);

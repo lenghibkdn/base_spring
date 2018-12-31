@@ -7,6 +7,6 @@ spring:
     
 amazonProperties:
   endpointUrl: https://s3.ap-northeast-1.amazonaws.com
-  accessKey: xxxxx
-  secretKey: xxxxx
+  accessKey: XXXX
+  secretKey: XXXX
   bucketName: nghi-upload-image

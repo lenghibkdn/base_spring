@@ -27,10 +27,6 @@ public class MainController {
 	@Autowired
 	private AmazonClient amazonClient;
 	
-	@Autowired
-    MainController(AmazonClient amazonClient) {
-        this.amazonClient = amazonClient;
-    }
 	
 	@RequestMapping("/public")
 	public String apiPublic() {
@@ -49,7 +45,7 @@ public class MainController {
 		return new ResponseEntity<List<UserEntity>>(listUser, HttpStatus.OK);
 	}
 	
-	@PostMapping("/uploadImage")
+	@RequestMapping(value = "/uploadImage", method = RequestMethod.POST)
 	public String uploadImage(@RequestPart(value = "file") MultipartFile file) {
 		return this.amazonClient.uploadFile(file);
 	}
